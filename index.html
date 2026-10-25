@@ -105,7 +105,7 @@
                         </div>
                         <div class="relative flex justify-center">
                             <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-gradient-to-br from-cyan-500/20 to-teal-500/0 border border-white/10 p-4 shadow-2xl backdrop-blur-sm flex items-center justify-center">
-                                <img src="https://i.ibb.co.com/B5jPV6tX/Whats-App-Image-2026-10-25-at-16-16-25.jpg" alt="Crocs Featured" class="rounded-2xl object-cover w-full h-full shadow-lg transform rotate-[-6deg] hover:rotate-0 transition duration-500">
+                                <img src="https://i.ibb.co.com/j9ffWTjt/Whats-App-Image-2026-10-25-at-16-16-24.jpg" alt="Crocs Featured" class="rounded-2xl object-cover w-full h-full shadow-lg transform rotate-[-6deg] hover:rotate-0 transition duration-500">
                             </div>
                         </div>
                     </div>
@@ -363,12 +363,12 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Harga (Rupiah)</label>
-                            <input type="number" id="prodPrice" placeholder="Contoh: 750000" required
+                            <input type="number" id="prodPrice" placeholder="Contoh: 289000" required
                                 class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Stok Tersedia</label>
-                            <input type="number" id="prodStock" placeholder="Contoh: 15" required
+                            <input type="number" id="prodStock" placeholder="Contoh: 100" required
                                 class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
                         </div>
                         <div class="sm:col-span-2">
@@ -420,11 +420,35 @@
 
     <!-- JavaScript Logic -->
     <script>
-        // Data Produk Permanen (Sudah termasuk foto ImgBB kamu)
+        // Data Produk Permanen (Disimpan langsung di dalam kode)
         let defaultProducts = [
-            { id: 1, name: "Crocs Classic White Edition", category: "Classic", price: 299000, stock: 15, image: "https://i.ibb.co.com/j9ffWTjt/Whats-App-Image-2026-10-25-at-16-16-24.jpg", desc: "Sandal Crocs klasik original dengan warna putih bersih, sangat nyaman dan ringan dipakai seharian." },
-            { id: 2, name: "Crocs Special Collection", category: "Collab", price: 349000, stock: 10, image: "https://i.ibb.co.com/B5jPV6tX/Whats-App-Image-2026-10-25-at-16-16-25.jpg", desc: "Koleksi spesial Crocs dengan desain trendi dan bahan Croslite empuk berkualitas tinggi." },
-            { id: 3, name: "Crocs Casual Comfort", category: "Classic", price: 279000, stock: 12, image: "https://i.ibb.co.com/vxYf4vZ1/Whats-App-Image-2026-10-25-at-16-16-24-1.jpg", desc: "Pilihan sandal santai harian yang anti slip, tahan air, dan mudah dibersihkan." }
+            { 
+                id: 1, 
+                name: "Crocs Classic Clog White / Blanc", 
+                category: "Classic", 
+                price: 289000, 
+                stock: 100, 
+                image: "https://i.ibb.co.com/j9ffWTjt/Whats-App-Image-2026-10-25-at-16-16-24.jpg", 
+                desc: "Warna: White / Blanc (Putih). Bahan: Croslite™ (Busa resin khas Crocs yang sangat ringan, empuk, tahan air, dan mudah dibersihkan).\n\nPanduan Ukuran (Size Chart Unisex):\n- US: M7 / W9 (Men 7 / Women 9)\n- EUR: 39 - 40\n- UK: M6 / W7\n\nFitur & Keunggulan Produk:\n- Ringan & Nyaman: Terbuat dari bahan busa Croslite™ berkualitas tinggi yang fleksibel.\n- Sirkulasi Udara Lengkap: Dilengkapi lubang ventilasi di bagian atas.\n- Tali Tumit Disesuaikan: Menggunakan pivoting heel strap untuk pas yang aman.\n- Mudah Dirawat: Tahan air, cepat kering, dan mudah dibersihkan." 
+            },
+            { 
+                id: 2, 
+                name: "Crocs Special Collection", 
+                category: "Collab", 
+                price: 349000, 
+                stock: 10, 
+                image: "https://i.ibb.co.com/B5jPV6tX/Whats-App-Image-2026-10-25-at-16-16-25.jpg", 
+                desc: "Koleksi spesial Crocs dengan desain trendi dan bahan Croslite empuk berkualitas tinggi." 
+            },
+            { 
+                id: 3, 
+                name: "Crocs Casual Comfort", 
+                category: "Classic", 
+                price: 279000, 
+                stock: 12, 
+                image: "https://i.ibb.co.com/vxYf4vZ1/Whats-App-Image-2026-10-25-at-16-16-24-1.jpg", 
+                desc: "Pilihan sandal santai harian yang anti slip, tahan air, dan mudah dibersihkan." 
+            }
         ];
 
         let products = defaultProducts;
@@ -514,7 +538,7 @@
                                     <button onclick="switchPage('detail', ${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 px-3 rounded-xl text-xs transition text-center">
                                         Detail
                                     </button>
-                                    <a href="https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(p.name)}*%20(${p.category})%20harga%20Rp%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
+                                    <a href="https://wa.me/${storeWhatsapp}?text=Halo\%20Admin,\%20saya\%20tertarik\%20untuk\%20memesan\%20produk\%20*${encodeURIComponent(p.name)}*%20(${p.category})\%20harga\%20Rp\%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
                                         <i class="fa-brands fa-whatsapp text-sm"></i>
                                         <span>Pesan WA</span>
                                     </a>
@@ -573,7 +597,7 @@
                                 <button onclick="switchPage('detail', ${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 px-3 rounded-xl text-xs transition text-center">
                                     Detail
                                 </button>
-                                <a href="https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(p.name)}*%20(${p.category})%20harga%20Rp%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
+                                <a href="https://wa.me/${storeWhatsapp}?text=Halo\%20Admin,\%20saya\%20tertarik\%20untuk\%20memesan\%20produk\%20*${encodeURIComponent(p.name)}*%20(${p.category})\%20harga\%20Rp\%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
                                     <i class="fa-brands fa-whatsapp text-sm"></i>
                                     <span>Pesan WA</span>
                                 </a>
@@ -608,251 +632,4 @@
                             <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full uppercase">
                                 ${p.category}
                             </span>
-                            <span class="text-xs font-bold ${p.stock > 0 ? 'text-emerald-600 bg-emerald-50' : 'text-red-600 bg-red-50'} px-3 py-1 rounded-full">
-                                Stok: ${p.stock} Tersedia
-                            </span>
-                        </div>
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900">${p.name}</h1>
-                        <div class="text-2xl sm:text-3xl font-black text-cyan-600">
-                            Rp ${p.price.toLocaleString('id-ID')}
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed">${p.desc}</p>
-                    </div>
-
-                    <div class="space-y-4 pt-4 border-t border-slate-100">
-                        <div class="space-y-2">
-                            <label class="block text-xs font-bold text-slate-700 uppercase">Pilih Ukuran (Size)</label>
-                            <select id="selectedSize" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 font-medium">
-                                <option value="M4 / W6 (37-38)">M4 / W6 (37-38)</option>
-                                <option value="M5 / W7 (38-39)">M5 / W7 (38-39)</option>
-                                <option value="M6 / W8 (39-40)">M6 / W8 (39-40)</option>
-                                <option value="M7 / W9 (40-41)">M7 / W9 (40-41)</option>
-                                <option value="M8 / W10 (41-42)">M8 / W10 (41-42)</option>
-                                <option value="M9 / W11 (42-43)">M9 / W11 (42-43)</option>
-                                <option value="M10 / W12 (43-44)">M10 / W12 (43-44)</option>
-                                <option value="All Size / Jibbitz">All Size / Jibbitz</option>
-                            </select>
-                        </div>
-                        <button onclick="orderViaWhatsApp(${p.id})" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 rounded-2xl shadow-lg shadow-emerald-600/25 transition flex items-center justify-center space-x-2 text-base">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                            <span>Pesan Sekarang via WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function orderViaWhatsApp(id) {
-            const p = products.find(item => item.id === id);
-            const size = document.getElementById('selectedSize').value;
-            const message = `Halo Admin Crocs Store ID,%0A%0ASaya ingin memesan produk berikut:%0A- *${p.name}*%0A- Kategori: ${p.category}%0A- Ukuran: ${size}%0A- Harga: Rp ${p.price.toLocaleString('id-ID')}%0A%0AMohon info ketersediaan dan proses selanjutnya. Terima kasih!`;
-            window.open(`https://wa.me/${storeWhatsapp}?text=${message}`, '_blank');
-        }
-
-        function handleHeaderSearch(e) {
-            if (e.key === 'Enter' || e.target.value.length > 2) {
-                const keyword = e.target.value.toLowerCase();
-                switchPage('catalog');
-                currentCategoryFilter = 'All';
-                const filtered = products.filter(p => p.name.toLowerCase().includes(keyword) || p.category.toLowerCase().includes(keyword));
-                const grid = document.getElementById('catalogProductGrid');
-                grid.innerHTML = '';
-                
-                if (filtered.length === 0) {
-                    grid.innerHTML = `<div class="col-span-full py-16 text-center text-slate-400 font-medium">Tidak ada produk yang cocok dengan "${e.target.value}".</div>`;
-                    return;
-                }
-
-                filtered.forEach(p => {
-                    grid.innerHTML += `
-                        <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
-                            <div class="relative h-64 overflow-hidden bg-slate-100 cursor-pointer" onclick="switchPage('detail', ${p.id})">
-                                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
-                                    ${p.category}
-                                </span>
-                                <span class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-bold px-2.5 py-1 rounded-lg shadow">
-                                    Stok: ${p.stock}
-                                </span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow space-y-3">
-                                <h3 onclick="switchPage('detail', ${p.id})" class="font-bold text-slate-900 text-base hover:text-cyan-600 cursor-pointer transition line-clamp-1">${p.name}</h3>
-                                <div class="text-cyan-600 font-black text-lg">
-                                    Rp ${p.price.toLocaleString('id-ID')}
-                                </div>
-                                <div class="pt-2 mt-auto grid grid-cols-2 gap-2">
-                                    <button onclick="switchPage('detail', ${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 px-3 rounded-xl text-xs transition text-center">
-                                        Detail
-                                    </button>
-                                    <a href="https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(p.name)}*%20(${p.category})%20harga%20Rp%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
-                                        <i class="fa-brands fa-whatsapp text-sm"></i>
-                                        <span>Pesan WA</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-            }
-        }
-
-        // ================= ADMIN LOGIC ================= //
-        function openAdminModal() {
-            document.getElementById('adminLoginModal').classList.remove('hidden');
-        }
-        function closeAdminModal() {
-            document.getElementById('adminLoginModal').classList.add('hidden');
-            document.getElementById('adminPasswordInput').value = '';
-        }
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            const pass = document.getElementById('adminPasswordInput').value;
-            if (pass === adminPassword) {
-                closeAdminModal();
-                openAdminDashboard();
-            } else {
-                alert('Kata sandi salah!');
-            }
-        }
-        function openAdminDashboard() {
-            document.getElementById('adminDashboardModal').classList.remove('hidden');
-            renderAdminTable();
-        }
-        function closeAdminDashboard() {
-            document.getElementById('adminDashboardModal').classList.add('hidden');
-            renderHomeHighlights();
-        }
-
-        function saveStoreSettings(e) {
-            e.preventDefault();
-            let newWa = document.getElementById('settingWhatsapp').value.trim();
-            const newPass = document.getElementById('settingPassword').value.trim();
-
-            if (newWa.startsWith('0')) {
-                newWa = '62' + newWa.substring(1);
-            }
-
-            storeWhatsapp = newWa;
-            if (newPass !== "") {
-                adminPassword = newPass;
-                document.getElementById('settingPassword').value = '';
-                alert('Pengaturan toko & Password Admin berhasil diperbarui dalam sesi ini!');
-            } else {
-                alert('Nomor WhatsApp toko berhasil diperbarui!');
-            }
-            updateWaLinks();
-        }
-
-        function renderAdminTable() {
-            const tbody = document.getElementById('adminProductTableBody');
-            const searchVal = document.getElementById('adminSearch').value.toLowerCase();
-            tbody.innerHTML = '';
-
-            const filtered = products.filter(p => p.name.toLowerCase().includes(searchVal) || p.category.toLowerCase().includes(searchVal));
-            document.getElementById('adminProductCount').innerText = products.length;
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-slate-400">Tidak ada produk ditemukan.</td></tr>`;
-                return;
-            }
-
-            filtered.forEach(p => {
-                tbody.innerHTML += `
-                    <tr class="hover:bg-slate-50 transition">
-                        <td class="p-3 flex items-center space-x-3">
-                            <img src="${p.image}" class="w-10 h-10 rounded-lg object-cover bg-slate-200">
-                            <span class="font-bold text-slate-900 line-clamp-1">${p.name}</span>
-                        </td>
-                        <td class="p-3 text-slate-600 font-medium">${p.category}</td>
-                        <td class="p-3 text-slate-900 font-extrabold">Rp ${p.price.toLocaleString('id-ID')}</td>
-                        <td class="p-3">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-bold ${p.stock > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'}">
-                                ${p.stock} pcs
-                            </span>
-                        </td>
-                        <td class="p-3 text-center space-x-2">
-                            <button onclick="editProduct(${p.id})" class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1.5 rounded-lg text-xs font-bold transition">
-                                Edit
-                            </button>
-                            <button onclick="deleteProduct(${p.id})" class="bg-red-100 hover:bg-red-200 text-red-700 px-3 py-1.5 rounded-lg text-xs font-bold transition">
-                                Hapus
-                            </button>
-                        </td>
-                    </tr>
-                `;
-            });
-        }
-
-        function handleSaveProduct(e) {
-            e.preventDefault();
-            const editId = document.getElementById('editProductId').value;
-            const name = document.getElementById('prodName').value;
-            const category = document.getElementById('prodCategory').value;
-            const price = Number(document.getElementById('prodPrice').value);
-            const stock = Number(document.getElementById('prodStock').value);
-            const image = document.getElementById('prodImage').value;
-            const desc = document.getElementById('prodDesc').value;
-
-            if (editId === "") {
-                const newProduct = {
-                    id: Date.now(),
-                    name, category, price, stock, image, desc
-                };
-                products.unshift(newProduct);
-                alert('Produk berhasil ditambahkan! (Catatan: Agar permanen di GitHub, perbarui kode ini di repository)');
-            } else {
-                const index = products.findIndex(p => p.id == editId);
-                if (index !== -1) {
-                    products[index] = { id: Number(editId), name, category, price, stock, image, desc };
-                    alert('Produk berhasil diperbarui!');
-                }
-            }
-
-            resetProductForm();
-            renderAdminTable();
-        }
-
-        function editProduct(id) {
-            const p = products.find(item => item.id === id);
-            if (!p) return;
-
-            document.getElementById('editProductId').value = p.id;
-            document.getElementById('prodName').value = p.name;
-            document.getElementById('prodCategory').value = p.category;
-            document.getElementById('prodPrice').value = p.price;
-            document.getElementById('prodStock').value = p.stock;
-            document.getElementById('prodImage').value = p.image;
-            document.getElementById('prodDesc').value = p.desc;
-
-            document.getElementById('formTitleText').innerText = "Edit Produk: " + p.name;
-            document.getElementById('formIconType').className = "fa-solid fa-pen-to-square";
-            document.getElementById('saveProductBtn').innerHTML = '<i class="fa-solid fa-floppy-disk mr-2"></i> Simpan Perubahan';
-            document.getElementById('cancelEditBtn').classList.remove('hidden');
-
-            window.scrollTo({top: 200, behavior: 'smooth'});
-        }
-
-        function resetProductForm() {
-            document.getElementById('editProductId').value = "";
-            document.getElementById('prodName').value = "";
-            document.getElementById('prodCategory').value = "Classic";
-            document.getElementById('prodPrice').value = "";
-            document.getElementById('prodStock').value = "";
-            document.getElementById('prodImage').value = "";
-            document.getElementById('prodDesc').value = "";
-
-            document.getElementById('formTitleText').innerText = "Tambah Produk Baru";
-            document.getElementById('formIconType').className = "fa-solid fa-circle-plus";
-            document.getElementById('saveProductBtn').innerHTML = '<i class="fa-solid fa-plus mr-2"></i> Tambahkan Produk';
-            document.getElementById('cancelEditBtn').classList.add('hidden');
-        }
-
-        function deleteProduct(id) {
-            if (confirm("Apakah kamu yakin ingin menghapus produk ini?")) {
-                products = products.filter(p => p.id !== id);
-                renderAdminTable();
-            }
-        }
-    </script>
-</body>
-</html>
+                            <span class="text-xs font-bold ${p.stock > 0 ? 'text-emerald-600 bg-emerald-50' : 'text-red-600 bg-red-50'}

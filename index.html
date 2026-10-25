@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocs Store ID - Official Catalog</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-slate-900 text-white text-xs py-2 px-4 text-center font-medium">
+        🔥 Flash Sale & Jibbitz Gratis untuk Pembelian Pertama! | Pesan Cepat via WhatsApp
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-cyan-600/20">
+                        C
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-slate-900">CROCS<span class="text-cyan-600">ID</span></span>
+                        <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Official Store</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600">
+                    <button onclick="switchPage('home')" class="hover:text-cyan-600 transition nav-link-home text-cyan-600">Home</button>
+                    <button onclick="switchPage('catalog')" class="hover:text-cyan-600 transition nav-link-catalog">Produk</button>
+                    <button onclick="switchPage('about')" class="hover:text-cyan-600 transition nav-link-about">Tentang Kami</button>
+                </nav>
+
+                <!-- Search & Action Buttons -->
+                <div class="flex items-center space-x-3">
+                    <div class="relative hidden sm:block">
+                        <input type="text" id="headerSearchInput" placeholder="Cari model Crocs..." onkeyup="handleHeaderSearch(event)"
+                            class="bg-slate-100 text-sm rounded-full pl-9 pr-4 py-2 w-48 lg:w-64 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition">
+                        <i class="fa-solid fa-search absolute left-3.5 top-3 text-xs text-slate-400"></i>
+                    </div>
+
+                    <!-- Social Media Quick Links -->
+                    <div class="hidden lg:flex items-center space-x-2 border-l border-slate-200 pl-3">
+                        <a href="https://www.instagram.com/bth_style.id?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw==" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-pink-50 hover:text-pink-600 flex items-center justify-center text-slate-600 transition" title="Instagram @bth_style.id">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-center text-slate-600 transition" title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+
+                    <!-- Admin Button -->
+                    <button onclick="openAdminModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-sm transition flex items-center space-x-2">
+                        <i class="fa-solid fa-lock text-xs"></i>
+                        <span class="hidden sm:inline">Admin</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- ================= PAGE: HOME ================= -->
+        <div id="page-home" class="page-section">
+            <!-- Hero Banner -->
+            <section class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-cyan-950 text-white py-16 lg:py-24 overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <span class="inline-flex items-center space-x-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                                <i class="fa-solid fa-bolt"></i> <span>Koleksi Terbaru 2026</span>
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                                Kenyamanan Nyata, <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">Gaya Tanpa Batas.</span>
+                            </h1>
+                            <p class="text-slate-300 text-base sm:text-lg max-w-xl">
+                                Temukan berbagai pilihan sandal Crocs original berkualitas tinggi. Koleksi Classic, Collab eksklusif, hingga Jibbitz lucu siap melengkapi harimu.
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <button onclick="switchPage('catalog')" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-cyan-500/25 transition flex items-center space-x-3">
+                                    <span>Belanja Sekarang</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <a id="heroWaBtn" href="#" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/15 text-white font-bold px-6 py-4 rounded-2xl backdrop-blur-md transition flex items-center space-x-2">
+                                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                                    <span>Tanya via WA</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="relative flex justify-center">
+                            <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-gradient-to-br from-cyan-500/20 to-teal-500/0 border border-white/10 p-4 shadow-2xl backdrop-blur-sm flex items-center justify-center">
+                                <img src="https://i.ibb.co.com/B5jPV6tX/Whats-App-Image-2026-10-25-at-16-16-25.jpg" alt="Crocs Featured" class="rounded-2xl object-cover w-full h-full shadow-lg transform rotate-[-6deg] hover:rotate-0 transition duration-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Highlights Per Category -->
+            <div id="categoryHighlightsContainer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+                <!-- Dynamic rendered by JS -->
+            </div>
+        </div>
+
+        <!-- ================= PAGE: CATALOG ================= -->
+        <div id="page-catalog" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                    <div>
+                        <h1 class="text-3xl font-extrabold text-slate-900">Katalog Produk</h1>
+                        <p class="text-sm text-slate-500 mt-1">Pilih model Crocs favoritmu dan pesan langsung via WhatsApp.</p>
+                    </div>
+                    <div id="categoryFilterButtons" class="flex items-center space-x-2 overflow-x-auto pb-2 hide-scrollbar">
+                        <!-- Dynamic categories -->
+                    </div>
+                </div>
+                <div id="catalogProductGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic products -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE: DETAIL PRODUCT ================= -->
+        <div id="page-detail" class="page-section hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <button onclick="switchPage('catalog')" class="inline-flex items-center space-x-2 text-sm font-bold text-slate-600 hover:text-cyan-600 mb-8 transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Kembali ke Katalog</span>
+                </button>
+                <div id="productDetailContent" class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-6 sm:p-10">
+                    <!-- Dynamic Detail Content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE: ABOUT US ================= -->
+        <div id="page-about" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-8 sm:p-12 space-y-8">
+                    <div class="text-center space-y-3">
+                        <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Tentang Kami</span>
+                        <h1 class="text-3xl sm:text-4xl font-black text-slate-900">Crocs Store ID Official</h1>
+                        <p class="text-slate-600 max-w-xl mx-auto">Destinasi utama sandal Crocs bergaransi kenyamanan dengan pilihan model terlengkap dan terupdate.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-2">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center mx-auto text-xl font-bold shadow-md">
+                                <i class="fa-solid fa-shield-check"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">100% Berkualitas</h3>
+                            <p class="text-xs text-slate-500">Material Croslite™ empuk, ringan, dan awet dipakai seharian.</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-2">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mx-auto text-xl font-bold shadow-md">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">Pemesanan Mudah via WA</h3>
+                            <p class="text-xs text-slate-500">Konsultasi ukuran & pemesanan cepat langsung terhubung ke admin.</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-2">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center mx-auto text-xl font-bold shadow-md">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">Pengiriman Cepat</h3>
+                            <p class="text-xs text-slate-500">Siap kirim ke seluruh wilayah Indonesia dengan aman.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-bold text-slate-900">Terhubung dengan Sosial Media Kami:</h4>
+                            <p class="text-xs text-slate-500">Ikuti update diskon & produk baru di Instagram kami.</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <a href="https://www.instagram.com/bth_style.id?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw==" target="_blank" class="px-5 py-2.5 rounded-xl bg-pink-50 text-pink-600 hover:bg-pink-100 font-bold text-sm transition flex items-center space-x-2">
+                                <i class="fa-brands fa-instagram text-lg"></i>
+                                <span>@bth_style.id</span>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold text-sm transition flex items-center space-x-2">
+                                <i class="fa-brands fa-facebook-f text-lg"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-600 flex items-center justify-center text-white font-bold text-xl">
+                            C
+                        </div>
+                        <span class="text-xl font-black tracking-tight">CROCS<span class="text-cyan-400">ID</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-sm">
+                        Pusat sandal Crocs original terbaik dan terpercaya. Pilihan model lengkap, empuk, dan nyaman untuk aktivitas harianmu.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-slate-300 mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><button onclick="switchPage('home')" class="hover:text-cyan-400 transition">Beranda</button></li>
+                        <li><button onclick="switchPage('catalog')" class="hover:text-cyan-400 transition">Katalog Produk</button></li>
+                        <li><button onclick="switchPage('about')" class="hover:text-cyan-400 transition">Tentang Kami</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-slate-300 mb-4">Sosial Media</h4>
+                    <div class="flex space-x-3">
+                        <a href="https://www.instagram.com/bth_style.id?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw==" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-pink-600 text-white flex items-center justify-center transition" title="Instagram @bth_style.id">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-blue-600 text-white flex items-center justify-center transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 Crocs Store ID. All rights reserved. Pemesanan via WhatsApp.</p>
+                <button onclick="openAdminModal()" class="hover:text-cyan-400 transition mt-2 sm:mt-0">Login Admin</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL: ADMIN LOGIN ================= -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl relative space-y-6">
+            <button onclick="closeAdminModal()" class="absolute right-6 top-6 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900">Login Admin</h3>
+                <p class="text-xs text-slate-500">Masukkan kata sandi admin untuk mengelola produk & stok.</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kata Sandi</label>
+                    <input type="password" id="adminPasswordInput" placeholder="Masukkan password admin" required
+                        class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                </div>
+                <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-extrabold py-3.5 rounded-xl shadow-lg shadow-cyan-600/25 transition">
+                    Masuk Dashboard
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= MODAL: ADMIN DASHBOARD ================= -->
+    <div id="adminDashboardModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden overflow-y-auto p-4 sm:p-6">
+        <div class="bg-slate-50 rounded-3xl max-w-5xl mx-auto shadow-2xl overflow-hidden min-h-[90vh] flex flex-col">
+            <!-- Dashboard Header -->
+            <div class="bg-slate-900 text-white px-6 sm:px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-600 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-black">Dashboard Admin Toko</h2>
+                        <p class="text-xs text-slate-400">Kelola produk, kategori, stok, dan pengaturan toko.</p>
+                    </div>
+                </div>
+                <button onclick="closeAdminDashboard()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Dashboard Content Tabs -->
+            <div class="flex-grow p-6 sm:p-8 space-y-8">
+                
+                <!-- PENGATURAN TOKO & AKUN ADMIN -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
+                    <div class="flex items-center space-x-3 border-b border-slate-100 pb-4">
+                        <div class="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900">Pengaturan Toko & Akun Admin</h3>
+                            <p class="text-xs text-slate-500">Ubah Nomor WhatsApp tujuan pesanan dan Password Admin kamu.</p>
+                        </div>
+                    </div>
+                    
+                    <form onsubmit="saveStoreSettings(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nomor WhatsApp Toko</label>
+                            <input type="text" id="settingWhatsapp" placeholder="Contoh: 6281298264601" required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Password Admin Baru</label>
+                            <input type="text" id="settingPassword" placeholder="Kosongkan jika tidak ingin diubah"
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        <div class="sm:col-span-2 flex justify-end">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-sm transition">
+                                <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan Pengaturan Toko
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- FORM TAMBAH / EDIT PRODUK -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-9 h-9 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-circle-plus" id="formIconType"></i>
+                            </div>
+                            <div>
+                                <h3 id="formTitleText" class="font-extrabold text-slate-900">Tambah Produk Baru</h3>
+                                <p class="text-xs text-slate-500">Lengkapi detail produk Crocs yang ingin diunggah.</p>
+                            </div>
+                        </div>
+                        <button type="button" id="cancelEditBtn" onclick="resetProductForm()" class="hidden text-xs text-red-600 font-bold hover:underline">
+                            Batalkan Edit
+                        </button>
+                    </div>
+
+                    <form onsubmit="handleSaveProduct(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="hidden" id="editProductId">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Produk</label>
+                            <input type="text" id="prodName" placeholder="Contoh: Crocs Classic Clog White" required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kategori</label>
+                            <select id="prodCategory" required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                <option value="Classic">Classic</option>
+                                <option value="Collab">Collab</option>
+                                <option value="Jibbitz">Jibbitz</option>
+                                <option value="All-Terrain">All-Terrain</option>
+                                <option value="Kids">Kids</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Harga (Rupiah)</label>
+                            <input type="number" id="prodPrice" placeholder="Contoh: 750000" required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Stok Tersedia</label>
+                            <input type="number" id="prodStock" placeholder="Contoh: 15" required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Link URL Foto Produk (Dari ImgBB)</label>
+                            <input type="url" id="prodImage" placeholder="https://i.ibb.co.com/..." required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Deskripsi & Ukuran Tersedia</label>
+                            <textarea id="prodDesc" rows="3" placeholder="Deskripsikan bahan, warna, dan ukuran..." required
+                                class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                        </div>
+                        <div class="sm:col-span-2 flex justify-end">
+                            <button type="submit" id="saveProductBtn" class="bg-cyan-600 hover:bg-cyan-500 text-white font-extrabold px-6 py-3 rounded-xl text-sm shadow-md shadow-cyan-600/20 transition">
+                                <i class="fa-solid fa-plus mr-2"></i> Tambahkan Produk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- DAFTAR PRODUK KELOLA -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-extrabold text-slate-900">Daftar Semua Produk (<span id="adminProductCount">0</span>)</h3>
+                        <input type="text" id="adminSearch" placeholder="Cari produk di daftar..." onkeyup="renderAdminTable()"
+                            class="bg-slate-100 text-xs rounded-xl px-3 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-600 uppercase text-[11px] font-bold">
+                                    <th class="p-3 rounded-l-xl">Produk</th>
+                                    <th class="p-3">Kategori</th>
+                                    <th class="p-3">Harga</th>
+                                    <th class="p-3">Stok</th>
+                                    <th class="p-3 rounded-r-xl text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminProductTableBody" class="divide-y divide-slate-100">
+                                <!-- Dynamic Rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data Produk Permanen (Sudah termasuk foto ImgBB kamu)
+        let defaultProducts = [
+            { id: 1, name: "Crocs Classic White Edition", category: "Classic", price: 299000, stock: 15, image: "https://i.ibb.co.com/j9ffWTjt/Whats-App-Image-2026-10-25-at-16-16-24.jpg", desc: "Sandal Crocs klasik original dengan warna putih bersih, sangat nyaman dan ringan dipakai seharian." },
+            { id: 2, name: "Crocs Special Collection", category: "Collab", price: 349000, stock: 10, image: "https://i.ibb.co.com/B5jPV6tX/Whats-App-Image-2026-10-25-at-16-16-25.jpg", desc: "Koleksi spesial Crocs dengan desain trendi dan bahan Croslite empuk berkualitas tinggi." },
+            { id: 3, name: "Crocs Casual Comfort", category: "Classic", price: 279000, stock: 12, image: "https://i.ibb.co.com/vxYf4vZ1/Whats-App-Image-2026-10-25-at-16-16-24-1.jpg", desc: "Pilihan sandal santai harian yang anti slip, tahan air, dan mudah dibersihkan." }
+        ];
+
+        let products = defaultProducts;
+        let adminPassword = "bthstyleid";
+        let storeWhatsapp = "6281298264601";
+        let currentCategoryFilter = 'All';
+
+        window.onload = function() {
+            renderHomeHighlights();
+            renderCatalog();
+            updateWaLinks();
+            document.getElementById('settingWhatsapp').value = storeWhatsapp;
+        };
+
+        function updateWaLinks() {
+            const heroBtn = document.getElementById('heroWaBtn');
+            if (heroBtn) {
+                heroBtn.href = `https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20mau%20tanya%20koleksi%20Crocs`;
+            }
+        }
+
+        function switchPage(pageId, param = null) {
+            document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
+            
+            if (pageId === 'home') {
+                document.getElementById('page-home').classList.remove('hidden');
+                renderHomeHighlights();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else if (pageId === 'catalog') {
+                document.getElementById('page-catalog').classList.remove('hidden');
+                if (param) currentCategoryFilter = param;
+                renderCatalog();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else if (pageId === 'detail') {
+                document.getElementById('page-detail').classList.remove('hidden');
+                renderProductDetail(param);
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else if (pageId === 'about') {
+                document.getElementById('page-about').classList.remove('hidden');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        }
+
+        function renderHomeHighlights() {
+            const container = document.getElementById('categoryHighlightsContainer');
+            container.innerHTML = '';
+            const categories = ['Classic', 'Collab', 'Jibbitz', 'All-Terrain', 'Kids'];
+
+            categories.forEach(cat => {
+                const catProducts = products.filter(p => p.category === cat);
+                if (catProducts.length === 0) return;
+                const displayProducts = catProducts.slice(0, 6);
+
+                let html = `
+                    <div class="space-y-6">
+                        <div class="flex items-end justify-between border-b border-slate-200 pb-4">
+                            <div>
+                                <span class="text-cyan-600 font-bold text-xs uppercase tracking-wider">Koleksi Pilihan</span>
+                                <h2 class="text-2xl sm:text-3xl font-black text-slate-900">${cat} Series</h2>
+                            </div>
+                            <button onclick="switchPage('catalog', '${cat}')" class="text-xs sm:text-sm font-extrabold text-cyan-600 hover:text-cyan-700 flex items-center space-x-1 group">
+                                <span>Lihat Semua (${catProducts.length})</span>
+                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                `;
+
+                displayProducts.forEach(p => {
+                    html += `
+                        <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
+                            <div class="relative h-64 overflow-hidden bg-slate-100 cursor-pointer" onclick="switchPage('detail', ${p.id})">
+                                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    ${p.category}
+                                </span>
+                                <span class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-bold px-2.5 py-1 rounded-lg shadow">
+                                    Stok: ${p.stock}
+                                </span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow space-y-3">
+                                <h3 onclick="switchPage('detail', ${p.id})" class="font-bold text-slate-900 text-base hover:text-cyan-600 cursor-pointer transition line-clamp-1">${p.name}</h3>
+                                <div class="text-cyan-600 font-black text-lg">
+                                    Rp ${p.price.toLocaleString('id-ID')}
+                                </div>
+                                <div class="pt-2 mt-auto grid grid-cols-2 gap-2">
+                                    <button onclick="switchPage('detail', ${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 px-3 rounded-xl text-xs transition text-center">
+                                        Detail
+                                    </button>
+                                    <a href="https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(p.name)}*%20(${p.category})%20harga%20Rp%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
+                                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                                        <span>Pesan WA</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div></div>`;
+                container.innerHTML += html;
+            });
+        }
+
+        function renderCatalog() {
+            const filterContainer = document.getElementById('categoryFilterButtons');
+            const categories = ['All', 'Classic', 'Collab', 'Jibbitz', 'All-Terrain', 'Kids'];
+
+            filterContainer.innerHTML = '';
+            categories.forEach(cat => {
+                let isActive = currentCategoryFilter === cat;
+                filterContainer.innerHTML += `
+                    <button onclick="filterCatalog('${cat}')" class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${isActive ? 'bg-cyan-600 text-white shadow-md shadow-cyan-600/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+                        ${cat === 'All' ? 'Semua Produk' : cat}
+                    </button>
+                `;
+            });
+
+            const grid = document.getElementById('catalogProductGrid');
+            grid.innerHTML = '';
+            let filtered = currentCategoryFilter === 'All' ? products : products.filter(p => p.category === currentCategoryFilter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-16 text-center text-slate-400 font-medium">Belum ada produk dalam kategori ini.</div>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
+                        <div class="relative h-64 overflow-hidden bg-slate-100 cursor-pointer" onclick="switchPage('detail', ${p.id})">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                ${p.category}
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-bold px-2.5 py-1 rounded-lg shadow">
+                                Stok: ${p.stock}
+                            </span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow space-y-3">
+                            <h3 onclick="switchPage('detail', ${p.id})" class="font-bold text-slate-900 text-base hover:text-cyan-600 cursor-pointer transition line-clamp-1">${p.name}</h3>
+                            <div class="text-cyan-600 font-black text-lg">
+                                Rp ${p.price.toLocaleString('id-ID')}
+                            </div>
+                            <div class="pt-2 mt-auto grid grid-cols-2 gap-2">
+                                <button onclick="switchPage('detail', ${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 px-3 rounded-xl text-xs transition text-center">
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(p.name)}*%20(${p.category})%20harga%20Rp%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                    <span>Pesan WA</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterCatalog(cat) {
+            currentCategoryFilter = cat;
+            renderCatalog();
+        }
+
+        function renderProductDetail(id) {
+            const p = products.find(item => item.id === id);
+            const container = document.getElementById('productDetailContent');
+
+            if (!p) {
+                container.innerHTML = `<div class="col-span-full text-center py-12">Produk tidak ditemukan.</div>`;
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="rounded-2xl overflow-hidden bg-slate-100 h-80 sm:h-[450px]">
+                    <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full uppercase">
+                                ${p.category}
+                            </span>
+                            <span class="text-xs font-bold ${p.stock > 0 ? 'text-emerald-600 bg-emerald-50' : 'text-red-600 bg-red-50'} px-3 py-1 rounded-full">
+                                Stok: ${p.stock} Tersedia
+                            </span>
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900">${p.name}</h1>
+                        <div class="text-2xl sm:text-3xl font-black text-cyan-600">
+                            Rp ${p.price.toLocaleString('id-ID')}
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">${p.desc}</p>
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-slate-100">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-slate-700 uppercase">Pilih Ukuran (Size)</label>
+                            <select id="selectedSize" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 font-medium">
+                                <option value="M4 / W6 (37-38)">M4 / W6 (37-38)</option>
+                                <option value="M5 / W7 (38-39)">M5 / W7 (38-39)</option>
+                                <option value="M6 / W8 (39-40)">M6 / W8 (39-40)</option>
+                                <option value="M7 / W9 (40-41)">M7 / W9 (40-41)</option>
+                                <option value="M8 / W10 (41-42)">M8 / W10 (41-42)</option>
+                                <option value="M9 / W11 (42-43)">M9 / W11 (42-43)</option>
+                                <option value="M10 / W12 (43-44)">M10 / W12 (43-44)</option>
+                                <option value="All Size / Jibbitz">All Size / Jibbitz</option>
+                            </select>
+                        </div>
+                        <button onclick="orderViaWhatsApp(${p.id})" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 rounded-2xl shadow-lg shadow-emerald-600/25 transition flex items-center justify-center space-x-2 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Pesan Sekarang via WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function orderViaWhatsApp(id) {
+            const p = products.find(item => item.id === id);
+            const size = document.getElementById('selectedSize').value;
+            const message = `Halo Admin Crocs Store ID,%0A%0ASaya ingin memesan produk berikut:%0A- *${p.name}*%0A- Kategori: ${p.category}%0A- Ukuran: ${size}%0A- Harga: Rp ${p.price.toLocaleString('id-ID')}%0A%0AMohon info ketersediaan dan proses selanjutnya. Terima kasih!`;
+            window.open(`https://wa.me/${storeWhatsapp}?text=${message}`, '_blank');
+        }
+
+        function handleHeaderSearch(e) {
+            if (e.key === 'Enter' || e.target.value.length > 2) {
+                const keyword = e.target.value.toLowerCase();
+                switchPage('catalog');
+                currentCategoryFilter = 'All';
+                const filtered = products.filter(p => p.name.toLowerCase().includes(keyword) || p.category.toLowerCase().includes(keyword));
+                const grid = document.getElementById('catalogProductGrid');
+                grid.innerHTML = '';
+                
+                if (filtered.length === 0) {
+                    grid.innerHTML = `<div class="col-span-full py-16 text-center text-slate-400 font-medium">Tidak ada produk yang cocok dengan "${e.target.value}".</div>`;
+                    return;
+                }
+
+                filtered.forEach(p => {
+                    grid.innerHTML += `
+                        <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
+                            <div class="relative h-64 overflow-hidden bg-slate-100 cursor-pointer" onclick="switchPage('detail', ${p.id})">
+                                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    ${p.category}
+                                </span>
+                                <span class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-bold px-2.5 py-1 rounded-lg shadow">
+                                    Stok: ${p.stock}
+                                </span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow space-y-3">
+                                <h3 onclick="switchPage('detail', ${p.id})" class="font-bold text-slate-900 text-base hover:text-cyan-600 cursor-pointer transition line-clamp-1">${p.name}</h3>
+                                <div class="text-cyan-600 font-black text-lg">
+                                    Rp ${p.price.toLocaleString('id-ID')}
+                                </div>
+                                <div class="pt-2 mt-auto grid grid-cols-2 gap-2">
+                                    <button onclick="switchPage('detail', ${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 px-3 rounded-xl text-xs transition text-center">
+                                        Detail
+                                    </button>
+                                    <a href="https://wa.me/${storeWhatsapp}?text=Halo%20Admin,%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(p.name)}*%20(${p.category})%20harga%20Rp%20${p.price.toLocaleString('id-ID')}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/20">
+                                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                                        <span>Pesan WA</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        // ================= ADMIN LOGIC ================= //
+        function openAdminModal() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+        function closeAdminModal() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+            document.getElementById('adminPasswordInput').value = '';
+        }
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pass = document.getElementById('adminPasswordInput').value;
+            if (pass === adminPassword) {
+                closeAdminModal();
+                openAdminDashboard();
+            } else {
+                alert('Kata sandi salah!');
+            }
+        }
+        function openAdminDashboard() {
+            document.getElementById('adminDashboardModal').classList.remove('hidden');
+            renderAdminTable();
+        }
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboardModal').classList.add('hidden');
+            renderHomeHighlights();
+        }
+
+        function saveStoreSettings(e) {
+            e.preventDefault();
+            let newWa = document.getElementById('settingWhatsapp').value.trim();
+            const newPass = document.getElementById('settingPassword').value.trim();
+
+            if (newWa.startsWith('0')) {
+                newWa = '62' + newWa.substring(1);
+            }
+
+            storeWhatsapp = newWa;
+            if (newPass !== "") {
+                adminPassword = newPass;
+                document.getElementById('settingPassword').value = '';
+                alert('Pengaturan toko & Password Admin berhasil diperbarui dalam sesi ini!');
+            } else {
+                alert('Nomor WhatsApp toko berhasil diperbarui!');
+            }
+            updateWaLinks();
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('adminProductTableBody');
+            const searchVal = document.getElementById('adminSearch').value.toLowerCase();
+            tbody.innerHTML = '';
+
+            const filtered = products.filter(p => p.name.toLowerCase().includes(searchVal) || p.category.toLowerCase().includes(searchVal));
+            document.getElementById('adminProductCount').innerText = products.length;
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-slate-400">Tidak ada produk ditemukan.</td></tr>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-3 flex items-center space-x-3">
+                            <img src="${p.image}" class="w-10 h-10 rounded-lg object-cover bg-slate-200">
+                            <span class="font-bold text-slate-900 line-clamp-1">${p.name}</span>
+                        </td>
+                        <td class="p-3 text-slate-600 font-medium">${p.category}</td>
+                        <td class="p-3 text-slate-900 font-extrabold">Rp ${p.price.toLocaleString('id-ID')}</td>
+                        <td class="p-3">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold ${p.stock > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'}">
+                                ${p.stock} pcs
+                            </span>
+                        </td>
+                        <td class="p-3 text-center space-x-2">
+                            <button onclick="editProduct(${p.id})" class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                                Edit
+                            </button>
+                            <button onclick="deleteProduct(${p.id})" class="bg-red-100 hover:bg-red-200 text-red-700 px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                                Hapus
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function handleSaveProduct(e) {
+            e.preventDefault();
+            const editId = document.getElementById('editProductId').value;
+            const name = document.getElementById('prodName').value;
+            const category = document.getElementById('prodCategory').value;
+            const price = Number(document.getElementById('prodPrice').value);
+            const stock = Number(document.getElementById('prodStock').value);
+            const image = document.getElementById('prodImage').value;
+            const desc = document.getElementById('prodDesc').value;
+
+            if (editId === "") {
+                const newProduct = {
+                    id: Date.now(),
+                    name, category, price, stock, image, desc
+                };
+                products.unshift(newProduct);
+                alert('Produk berhasil ditambahkan! (Catatan: Agar permanen di GitHub, perbarui kode ini di repository)');
+            } else {
+                const index = products.findIndex(p => p.id == editId);
+                if (index !== -1) {
+                    products[index] = { id: Number(editId), name, category, price, stock, image, desc };
+                    alert('Produk berhasil diperbarui!');
+                }
+            }
+
+            resetProductForm();
+            renderAdminTable();
+        }
+
+        function editProduct(id) {
+            const p = products.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('editProductId').value = p.id;
+            document.getElementById('prodName').value = p.name;
+            document.getElementById('prodCategory').value = p.category;
+            document.getElementById('prodPrice').value = p.price;
+            document.getElementById('prodStock').value = p.stock;
+            document.getElementById('prodImage').value = p.image;
+            document.getElementById('prodDesc').value = p.desc;
+
+            document.getElementById('formTitleText').innerText = "Edit Produk: " + p.name;
+            document.getElementById('formIconType').className = "fa-solid fa-pen-to-square";
+            document.getElementById('saveProductBtn').innerHTML = '<i class="fa-solid fa-floppy-disk mr-2"></i> Simpan Perubahan';
+            document.getElementById('cancelEditBtn').classList.remove('hidden');
+
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+
+        function resetProductForm() {
+            document.getElementById('editProductId').value = "";
+            document.getElementById('prodName').value = "";
+            document.getElementById('prodCategory').value = "Classic";
+            document.getElementById('prodPrice').value = "";
+            document.getElementById('prodStock').value = "";
+            document.getElementById('prodImage').value = "";
+            document.getElementById('prodDesc').value = "";
+
+            document.getElementById('formTitleText').innerText = "Tambah Produk Baru";
+            document.getElementById('formIconType').className = "fa-solid fa-circle-plus";
+            document.getElementById('saveProductBtn').innerHTML = '<i class="fa-solid fa-plus mr-2"></i> Tambahkan Produk';
+            document.getElementById('cancelEditBtn').classList.add('hidden');
+        }
+
+        function deleteProduct(id) {
+            if (confirm("Apakah kamu yakin ingin menghapus produk ini?")) {
+                products = products.filter(p => p.id !== id);
+                renderAdminTable();
+            }
+        }
+    </script>
+</body>
+</html>
